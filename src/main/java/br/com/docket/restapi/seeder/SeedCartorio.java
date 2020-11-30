@@ -28,6 +28,8 @@ public class SeedCartorio {
     }
 
     private void creatingCartorios() {
+
+
         Cartorio cartorio1 = new Cartorio();
         cartorio1.setNome("Cartorio Regional de cotia");
         cartorio1.setEndereco("Rua Moraes de abreu, centro-cotia");
