@@ -23,19 +23,24 @@
 <body>
 
 <header>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+          <span class="navbar-text bg-dark">
+            Cartórios - Docket
+          </span>
+        </nav>
+    </header>
+
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-            <li class="breadcrumb-item"><a href="/cartorios">Posts</a></li>
+            <li class="breadcrumb-item"><a href="/cartorios">Cartórios</a></li>
             <li class="breadcrumb-item active" aria-current="page">Novo Cartório</li>
         </ol>
     </nav>
 </header>
 <section>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-            <li class="breadcrumb-item active" aria-current="page">Posts</li>
-        </ol>
-    </nav>
+
 
     <div class="card-container card">
         <form class="first-container"
@@ -46,8 +51,6 @@
             <div class="form-group">
                 <label>Nome Cartório</label>
                 <input type="text" class="form-control" name="nome" th:field="*{nome}">
-                <!--                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone-->
-                <!--                    else.</small>-->
             </div>
             <div class="form-group">
                 <label>Endereço cartório</label>
@@ -55,7 +58,8 @@
             </div>
             <div class="form-group">
                 <label>Tipos emissões cartórios</label>
-                <input type="text" class="form-control" name="tipoCertificado" th:field="*{tipoCertidao}">
+                <textarea type="text" class="form-control" name="tipoCertificado">
+                </textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Salvar Cartório</button>

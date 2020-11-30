@@ -9,6 +9,9 @@
 
         .first-container{
             width: 100%;
+            border-right: 1px solid 1e1e1e;
+            border-left: 1px solid 1e1e1e;
+
         }
 
         .container{
@@ -22,6 +25,16 @@
             text-align: center;
        }
 
+       .main{
+        width: 1600px;
+        padding: 15px
+       }
+
+        .register-input{
+            max-width: 100% !important;
+            width: 622px !important;
+            margin: 0 auto !important;
+        }
 
     </style>
 </head>
@@ -35,25 +48,36 @@
     </nav>
 </header>
 <section>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
-            <li class="breadcrumb-item active" aria-current="page">Posts</li>
-        </ol>
-    </nav>
-
-    <div class="cartorio-btn">
-        <a href="/novo-cartorio" class="btn btn-primary" role="button">Cadastrar novo cartório</a>
-    </div>
+    <div class=" main">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+            </ol>
+        </nav>
 
 
-    <div class="first-container">
-        <div class="card container" th:each="cartorio : ${cartorios}">
-            <div class="card-body">
-                <h5 class="card-title" th:text="${cartorio.nome}">Nome cartorio</h5>
-                <h6 class="card-subtitle mb-2 text-muted" th:text="${cartorio.endereco}">tipos de certidões</h6>
-                <p class="card-text" th:text="${cartorio.tipoCertidao}">endereço</p>
-                <a th:href="@{/edit-cartorio/{id}(id=${cartorio.id})}" class="card-link">editar cartório</a>
-                <a th:href="@{/delete-cartorio/{id}(id=${cartorio.id})}" class="card-link">excluir cartório</a>
+
+        <div class="register-input">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cadastrar cartório" aria-label="register"
+                       aria-describedby="basic-addon1">
+                <div class="input-group-prepend">
+                    <a href="novo-cartorio">
+                        <span class="input-group-text" id="basic-addon1">+</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="first-container">
+            <div class="card container" th:each="cartorio : ${cartorios}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${cartorio.nome}">Nome cartorio</h5>
+                    <h6 class="card-subtitle mb-2 text-muted" th:text="${cartorio.endereco}">tipos de certidões</h6>
+                    <p class="card-text" th:text="${cartorio.tipoCertidao}">endereço</p>
+                    <a th:href="@{/edit-cartorio/{id}(id=${cartorio.id})}" class="btn btn-primary card-link">editar
+                        cartório</a>
+                    <a th:href="@{/delete-cartorio/{id}(id=${cartorio.id})}" class="btn btn-secondary card-link">excluir
+                        cartório</a>
+                </div>
             </div>
         </div>
     </div>
